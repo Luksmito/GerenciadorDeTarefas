@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Entrar no To Do list{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 m-auto" >
+        <div class="card card-body">
+          <h1 class="text-center mb-3">
+            <i class="fas fa-sign-in-alt"></i> Entrar no To Do Lista
+          </h1>
+          <form method="post">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button type="submit" class="btn btn-primary btn-block my-3">Entrar</button>
+          </form>
+          <p class="change-form-p">Quer criar uma conta? <a href="/accounts/register">Clique aqui!</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+<!-- 
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div id="cad" class="card auth-card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Entrar no To Do Lista</h4>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">  next serve para quando o usuario clicar em alguma função que é necessário logar, o django salva essa url e o redireciona para o ela quando ele se logar
+
+                    {{form|crispy}}
+                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->
